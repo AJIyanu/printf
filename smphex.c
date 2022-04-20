@@ -1,12 +1,12 @@
 #include "main.h"
 
 /**
- * phex - converts dec to hex
+ * smphex - converts dec to hex
  * @num: number to be converted
  * Return: counts of putchar
  */
 
-int phex(int num)
+int smphex(int num)
 {
 	int i = 1;
 
@@ -16,7 +16,7 @@ int phex(int num)
 	if (num / 16)
 		i = i + phex(num / 16);
 	if (num % 16 > 9)
-		_putchar(num % 16 + 55);
+		_putchar(num % 16 + 87);
 	if (num % 16 < 10)
 		_putchar(num % 16 + 48);
 
