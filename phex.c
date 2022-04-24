@@ -1,14 +1,16 @@
 #include "main.h"
+#include <stdarg.h>
 
 /**
  * phex - converts dec to hex
- * @num: number to be converted
+ * @va_arg: number to be converted
  * Return: counts of putchar
  */
 
-int phex(int num)
+int phex(va_arg(arg, int))
 {
 	int i = 1;
+	int num = va_arg(arg, int);
 
 	if (num == 0)
 		_putchar('0');

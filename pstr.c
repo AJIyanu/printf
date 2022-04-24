@@ -1,14 +1,16 @@
+#include <stdarg.h>
 #include "main.h"
 
 /**
  * pstr - prints string
- * @str: address of string to be printed
+ * @va_arg: address of string to be printed
  * Return: count of invoked print
  */
 
-int pstr(char *str)
+int pstr(va_arg(arg, char *))
 {
 	int count = 0;
+	char *str = va_arg(arg, char *);
 
 	for (count = 0; str[count] != '\0'; count++)
 		_putchar(str[count]);
