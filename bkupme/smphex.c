@@ -1,14 +1,16 @@
+#include <stdarg.h>
 #include "main.h"
 
 /**
  * smphex - converts dec to hex
- * @num: number to be converted
+ * @va_arg: number to be converted
  * Return: counts of putchar
  */
 
-int smphex(int num)
+int smphex(va_arg(arg, int))
 {
 	int i = 1;
+	int num = va_arg(arg, int);
 
 	if (num == 0)
 		_putchar('0');
