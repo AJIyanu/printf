@@ -1,49 +1,37 @@
-#ifndef HOLBERTON_H
-#define HOLBERTON_H
-
-#include <stdio.h>
-#include <stdlib.h>
+#ifndef HOLBERTON
+#define HOLBERTON
 #include <stdarg.h>
-#include <limits.h>
-#include <unistd.h>
-
-
-
+#include <stdlib.h>
 /**
- * struct format - match the conversion specifiers for printf
- * @id: type char pointer of the specifier i.e (l, h) for (d, i, u, o, x, X)
- * @f: type pointer to function for the conversion specifier
- *
+ * struct char_funcs - Struct to find function based on char
+ * @c: char to check as key
+ * @f: Pointer to function to call
  */
-
-typedef struct format
+typedef struct char_funcs
 {
-	char *id;
+	char *c;
 	int (*f)();
-} convert_match;
+} char_funcs_t;
 
-int printf_pointer(va_list val);
-int printf_hex_aux(unsigned long int num);
-int printf_HEX_aux(unsigned int num);
-int printf_exclusive_string(va_list val);
-int printf_HEX(va_list val);
-int printf_hex(va_list val);
-int printf_oct(va_list val);
-int printf_unsigned(va_list args);
-int printf_bin(va_list val);
-int printf_srev(va_list args);
-int printf_rot13(va_list args);
-int printf_int(va_list args);
-int printf_dec(va_list args);
-int _strlen(char *s);
-int *_strcpy(char *dest, char *src);
-int _strlenc(const char *s);
-int rev_string(char *s);
-int _strlenc(const char *s);
-int printf_37(void);
-int printf_char(va_list val);
-int printf_string(va_list val);
-int _putchar(char c);
+void write_buffer(char buffer[], int *buflen, int *bufpos);
+void initialize_buffer(char buffer[]);
 int _printf(const char *format, ...);
-
+int print_c(va_list args, char buffer[], int *buflen, int *bufpos);
+int print_s(va_list args, char buffer[], int *buflen, int *bufpos);
+int print_number(int n, char buffer[], int *buflen, int *bufpos);
+int print_int(va_list args, char buffer[], int *buflen, int *bufpos);
+char *binConverter(unsigned int n);
+char *octConverter(unsigned int n);
+char *hexConverter(char type, unsigned int n);
+char *size_tHex(char type, size_t n);
+int print_Unum(unsigned int n, char buffer[], int *buflen, int *bufpos);
+int print_u(va_list args, char buffer[], int *buflen, int *bufpos);
+int print_o(va_list args, char buffer[], int *buflen, int *bufpos);
+int print_hex(va_list args, char buffer[], int *buflen, int *bufpos);
+int print_heX(va_list args, char buffer[], int *buflen, int *bufpos);
+int print_b(va_list args, char buffer[], int *buflen, int *bufpos);
+int print_S(va_list args, char buffer[], int *buflen, int *bufpos);
+int print_r(va_list args, char buffer[], int *buflen, int *bufpos);
+int print_R(va_list args, char buffer[], int *buflen, int *bufpos);
+int print_p(va_list args, char buffer[], int *buflen, int *bufpos);
 #endif
